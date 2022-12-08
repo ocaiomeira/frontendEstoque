@@ -1,0 +1,35 @@
+
+<body>
+  <nav>
+    <div class="logo">
+        <a routerLink="/produto/home/" href="index.html"> <img src="../../../assets/img/logo.png"> </a>
+    </div>
+    <button routerLink="/produto/home/">Voltar</button>
+</nav>
+<div class="container">
+  <h1 class="header-title">  <a href="#" routerLink="/produto/create/" class="btn btn-success">Cadastrar Produto</a></h1>
+  
+    <table class="tabela">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Descricao</th>
+        <th>Preço</th>
+        <th>Quantidade</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let produto of produtos">
+        <td>{{ produto.id }}</td>
+        <td>{{ produto.name }}</td>
+        <td>{{ produto.descricao }}</td>
+        <td>{{ produto.preco }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td>
+          <a href="#" [routerLink]="['/produto/', produto.id, 'view']" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/produto/', produto.id, 'edit']" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deleteProduto(produto.id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+ </div>
+</body>

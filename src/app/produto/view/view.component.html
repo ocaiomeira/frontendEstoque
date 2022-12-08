@@ -1,0 +1,30 @@
+<nav>
+    <div class="logo">
+        <a routerLink="/produto/home/" href="index.html"> <img src="../../../assets/img/logo.png"> </a>
+    </div>
+    <button routerLink="/produto/index">Voltar</button>
+</nav>
+
+<div class="container">
+    <h1>{{ produto.name }}</h1>
+  
+   <div class="quadro">
+    <div>
+        <strong>ID:</strong>
+        <p>{{produto.id }}</p>
+    </div>
+    <div>
+        <strong>Descrição:</strong>
+        <p>{{ produto.descricao }}</p>
+    </div>
+    <div>
+        <strong>Preço:</strong>
+        <p>{{ produto.preco }}</p>
+    </div>
+    <div>
+        <strong>Quantidade:</strong>
+        <p>{{ produto.quantidade }}</p>
+    </div>
+</div>
+<a href="#" routerLink="/produto/index" class="btn btn-primary">Back</a>
+</div>

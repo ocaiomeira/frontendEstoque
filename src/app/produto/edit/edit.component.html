@@ -1,0 +1,52 @@
+<nav>
+    <div class="logo">
+        <a routerLink="/produto/home/" ref="index.html"> <img src="../../../assets/img/logo.png"> </a>
+    </div>
+    <button routerLink="/produto/index">Voltar</button>
+</nav>
+<div class="container">       
+   <form [formGroup]="form" (ngSubmit)="submit()">
+    
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                [(ngModel)]="produto.name"
+                class="form-control">
+        </div>
+           
+        <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <input 
+                formControlName="descricao"
+                id="descricao" 
+                type="text" 
+                [(ngModel)]= "produto.descricao"
+                class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input 
+                formControlName="preco"
+                id="preco" 
+                type="text" 
+                [(ngModel)]= "produto.preco"
+                class="form-control">
+        </div> 
+
+        <div class="form-group">
+            <label for="quantidade">Quantidade:</label>
+            <input 
+                formControlName="quantidade"
+                id="quantidade" 
+                type="text" 
+                [(ngModel)]= "produto.quantidade"
+                class="form-control">
+        </div>
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
